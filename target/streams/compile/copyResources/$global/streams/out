@@ -1,0 +1,4 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/keithy/Desktop/projects/Parsons-1/conf/application.conf,/Users/keithy/Desktop/projects/Parsons-1/target/scala-2.11/classes/application.conf)[0m
+[0m[[0mdebug[0m] [0m	(/Users/keithy/Desktop/projects/Parsons-1/conf/logback.xml,/Users/keithy/Desktop/projects/Parsons-1/target/scala-2.11/classes/logback.xml)[0m
+[0m[[0mdebug[0m] [0m	(/Users/keithy/Desktop/projects/Parsons-1/conf/routes,/Users/keithy/Desktop/projects/Parsons-1/target/scala-2.11/classes/routes)[0m
