@@ -9,14 +9,20 @@ body {
 .container {
     max-width: 860px;
 }
+
 .main-banner {
     text-align: center;
     position: relative;
-    transform: translateY(50%);
+    transform: translateY(20vh);
+    color: white;
 }
 
 .main-banner h1 {
     font-size: 36px;
+}
+
+.main-banner a:hover {
+    color: white !important;
 }
 
 .main-banner p {
@@ -24,8 +30,9 @@ body {
 }
 
 .jumbotron {
-    height: 70vh;
-    background: url('../images/triangles.png') center;
+    height: 90vh;
+    background: url('../images/splash.jpg');
+    background-position-y: 20%;
     background-size: cover;
 }
 
