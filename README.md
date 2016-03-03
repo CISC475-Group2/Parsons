@@ -1,5 +1,4 @@
 # Parsons
-----------------------------------------
 
 [Website](http://cisc475-group2.github.io/Parsons/)
 
