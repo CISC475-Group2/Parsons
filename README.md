@@ -1,9 +1,8 @@
 # Parsons
-http://cisc475-group2.github.io/Parsons/
 ----------------------------------------
-
-## Slack Group
-https://cisc475-project2.slack.com/
+[Website](http://cisc475-group2.github.io/Parsons/)
+[Documentation](https://cisc475.gitbooks.io/parsons/content/)
+[Slack](https://cisc475-project2.slack.com/)
 
 ## Members
 | Name               | Email             | Phone        |
