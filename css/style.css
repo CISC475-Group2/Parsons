@@ -1,3 +1,7 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
 body {
     background-color: #EEE;
 }
@@ -39,3 +43,6 @@ body {
     color: black;
 }
 
+a:hover {
+    color: #666 !important;
+}
