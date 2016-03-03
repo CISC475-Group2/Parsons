@@ -22,6 +22,7 @@ body {
 .jumbotron {
     height: 70vh;
     background: url('../images/triangles.png') center;
+    background-size: cover;
 }
 
 .navbar {
