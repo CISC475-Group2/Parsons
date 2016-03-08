@@ -6,7 +6,7 @@
 
 [Slack](https://cisc475-project2.slack.com/)
 
-[Schema](https://drive.google.com/a/udel.edu/file/d/0B7h-h1_eAAUPS2hhdUJkaGNSMnc/view?usp=sharing)
+[Schema](https://drive.google.com/a/udel.edu/file/d/0B7h-h1_eAAUPS2hhdUJkaGNSMnc/view?usp=sharing) (Click "Open" to edit)
 
 ## Members
 | Name               | Email             | Phone        |
