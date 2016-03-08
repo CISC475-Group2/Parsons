@@ -2,7 +2,7 @@
 
 [Website](http://cisc475-group2.github.io/Parsons/)
 
-[Documentation](https://cisc475.gitbooks.io/parsons/content/) [edit doc](https://www.gitbook.com/book/cisc475/parsons/edit#/edit/master/README.md)
+[Documentation](https://cisc475.gitbooks.io/parsons/content/) -- [edit](https://www.gitbook.com/book/cisc475/parsons/edit#/edit/master/README.md)
 
 [Slack](https://cisc475-project2.slack.com/)
 
