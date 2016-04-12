@@ -8,7 +8,9 @@ pip
 
 `git clone https://github.com/CISC475-Group2/Parsons && cd Parsons/`
 
-`virtualenv venv -p \`which python3\``
+```
+virtualenv venv -p `which python3`
+```
 
 `source venv/bin/activate`
 
