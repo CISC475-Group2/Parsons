@@ -16,3 +16,4 @@ venv
 /.settings
 /.target
 .DS_Store
+*.pyc
