@@ -1,7 +1,9 @@
 # Requirements
-python3
+* python version 3.5.1
 
-pip
+* pip
+
+* virtualenv
 
 # Install
 ```
