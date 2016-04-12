@@ -5,6 +5,7 @@ target
 tmp
 .history
 dist
+venv
 /.idea
 /*.iml
 /out
