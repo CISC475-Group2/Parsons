@@ -28,6 +28,10 @@ To create an admin user:
 python manage.py createsuperuser
 ```
 
+There is a test user with these credentials:
+* username: `johnsmith`
+* password: `password123`
+* 
 # Installation gotchas
 
 * Our VM uses `tcsh` shell, so be sure to switch to `bash` or you will get errors doing the `source` command. Just type `bash` and you will log into the bash shell.
