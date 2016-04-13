@@ -1,9 +1,13 @@
 {% extends 'app/base.html' %}
+{% load bootstrap %}
 {% block content %}
-<form method="post" action="{% url 'accounts:login' %}">
-{% csrf_token %}
-{{ form }}
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="/" />
-</form>
+
+<div class="col-lg-4">
+    <form method="post" action="{% url 'accounts:login' %}">
+        {% csrf_token %}
+        {{ form | bootstrap }}
+        <input type="submit" value="login" />
+        <input type="hidden" name="next" value="/" />
+    </form>
+</div>
 {% endblock %}

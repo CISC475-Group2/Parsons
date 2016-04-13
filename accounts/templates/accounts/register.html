@@ -1,8 +1,11 @@
 {% extends 'app/base.html' %}
+{% load bootstrap %}
 {% block content %}
 {{ errors }}
-<form action="{% url 'accounts:register_student' %}" method="post">{% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit"/>
-</form>
+<div class="col-lg-6">
+    <form action="{% url 'accounts:register_student' %}" method="post">{% csrf_token %}
+        {{ form | bootstrap }}
+        <input type="submit" value="Submit"/>
+    </form>
+</div>
 {% endblock %}
