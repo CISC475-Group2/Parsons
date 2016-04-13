@@ -1,0 +1,31 @@
+[
+    {
+        "model": "app.section",
+        "pk": 1,
+        "fields": {
+            "section": "15F-CISC108020L: INTRO TO COMPUTER SCIENCE I, 15F-CISC108010: INTRO TO COMPUTER SCIENCE I"
+        }
+    },
+    {
+        "model": "app.section",
+        "pk": 2,
+        "fields": {
+            "section": "15F-CISC108021L: INTRO TO COMPUTER SCIENCE I, 15F-CISC108010: INTRO TO COMPUTER SCIENCE I"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "username": "johnsmith",
+            "password": "pbkdf2_sha256$24000$xOWkUK3xXzg6$SEl2Fa4pvIJkUBQoFjU/qfVdnk4BcY5l8s0Ijmq8uNg=",
+            "is_superuser": "0",
+            "first_name": "John",
+            "last_name": "Smith",
+            "email": "johnsmith@udel.edu",
+            "is_staff": "0",
+            "is_active": "1",
+            "date_joined": "2016-04-13 15:55:26.551224"
+        }
+    }
+]
