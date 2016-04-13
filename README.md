@@ -17,6 +17,11 @@ python manage.py loaddata initial_data
 python manage.py runserver
 ```
 
+Note - on the VM use
+```
+python manage.py runserver 0.0.0.0:8000
+```
+
 To create an admin user:
 
 ```
