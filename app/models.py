@@ -22,7 +22,7 @@ class Block(models.Model):
 class Solved(models.Model):
     user = models.ForeignKey(User)
     problem = models.ForeignKey(Problem)
-    solved_time = models.DateTimeField('solved time', default=timezone.now())
+    solved_time = models.DateTimeField('solved time', default=timezone.now)
 
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name + ' solved problem ' + str(self.problem.id)

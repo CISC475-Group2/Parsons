@@ -9,7 +9,7 @@ class StudentRegistrationForm(UserCreationForm):
     username = forms.CharField(required = True)
     first_name = forms.CharField(required = True)
     last_name = forms.CharField(required = True)
-    section = forms.ChoiceField(required = True, choices=Section.get_available_choices())
+    section = forms.ChoiceField(required = True, choices=Section.get_available_choices)
 
     def clean_and_validate_email(self):
         email = self.cleaned_data['email']
