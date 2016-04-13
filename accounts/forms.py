@@ -16,6 +16,9 @@ class StudentRegistrationForm(UserCreationForm):
         domain = email.split('@')[1]
         if domain != "udel.edu":
             raise forms.ValidationError("Must use a udel.edu email.")
+        elif email and User.objects.filter(email=email).exclude(username=username).count():
+            raise forms.ValidationError("This email is already in use.")
+
         return email
 
     class Meta:
