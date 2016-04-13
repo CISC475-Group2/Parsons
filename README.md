@@ -17,12 +17,21 @@ python manage.py loaddata initial_data
 python manage.py runserver
 ```
 
+Note - on the VM use
+```
+python manage.py runserver 0.0.0.0:8000
+```
+
 To create an admin user:
 
 ```
 python manage.py createsuperuser
 ```
 
+There is a test user with these credentials:
+* username: `johnsmith`
+* password: `password123`
+* 
 # Installation gotchas
 
 * Our VM uses `tcsh` shell, so be sure to switch to `bash` or you will get errors doing the `source` command. Just type `bash` and you will log into the bash shell.
