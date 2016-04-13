@@ -1,9 +1,10 @@
 # Requirements
 * python version 3.5.1
-
 * pip
-
 * virtualenv
+* mysql
+  * username: `root`
+  * password: `mysql`
 
 # Install
 ```
