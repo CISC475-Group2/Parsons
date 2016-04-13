@@ -13,7 +13,7 @@ def register_student(request):
             login(request, user)
             return HttpResponseRedirect('/')
         else:
-            context['errors'] = form.errors
+            print(form.errors)
             return render(request, 'accounts/register.html', context)
 
     return render(request, 'accounts/register.html', context)

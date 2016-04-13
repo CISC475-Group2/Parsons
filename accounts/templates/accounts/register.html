@@ -1,11 +1,18 @@
 {% extends 'app/base.html' %}
 {% load bootstrap %}
 {% block content %}
-{{ errors }}
-<div class="col-lg-6">
-    <form action="{% url 'accounts:register_student' %}" method="post">{% csrf_token %}
-        {{ form | bootstrap }}
-        <input type="submit" value="Submit"/>
+<div class="col-lg-8">
+    <form class="form-horizontal" action="{% url 'accounts:register_student' %}" method="post">{% csrf_token %}
+        <legend>Register</legend>
+        {{ form.errors }}
+        {{ form.username.errors }}
+        {{ form | bootstrap_horizontal }}
+        <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+                <input type="submit" class="btn btn-primary" value="Register" />
+                <input type="hidden" name="next" value="/" />
+            </div>
+        </div>
     </form>
 </div>
 {% endblock %}
