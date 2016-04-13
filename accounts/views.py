@@ -5,7 +5,6 @@ from .forms import StudentRegistrationForm
 from django.contrib.auth import login
 
 def register_student(request):
-    context = {'form': StudentRegistrationForm()}
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
         if form.is_valid():
@@ -13,7 +12,8 @@ def register_student(request):
             login(request, user)
             return HttpResponseRedirect('/')
         else:
-            print(form.errors)
-            return render(request, 'accounts/register.html', context)
+            return render(request, 'accounts/register.html', {'form':form})
+    else:
+        form = StudentRegistrationForm()
 
-    return render(request, 'accounts/register.html', context)
+    return render(request, 'accounts/register.html', {'form':form})

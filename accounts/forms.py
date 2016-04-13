@@ -11,7 +11,7 @@ class StudentRegistrationForm(UserCreationForm):
     last_name = forms.CharField(required = True)
     section = forms.ChoiceField(required = True, choices=Section.get_available_choices)
 
-    def clean_and_validate_email(self):
+    def cleaned_email(self):
         email = self.cleaned_data['email']
         domain = email.split('@')[1]
         if domain != "udel.edu":
@@ -26,7 +26,7 @@ class StudentRegistrationForm(UserCreationForm):
         student = Student()
 
         form_username = self.cleaned_data['username']
-        form_email = self.clean_and_validate_email()
+        form_email = self.cleaned_email()
         form_password = self.cleaned_data['password1']
         form_first_name = self.cleaned_data['first_name']
         form_last_name = self.cleaned_data['last_name']
@@ -53,5 +53,4 @@ class StudentRegistrationForm(UserCreationForm):
             user.save()
             user = authenticate(username=user.username, password=form_password)
 
-        print(user)
         return user
