@@ -1,5 +1,8 @@
+{% extends 'app/base.html' %}
+{% block content %}
 {{ errors }}
 <form action="{% url 'accounts:register_student' %}" method="post">{% csrf_token %}
     {{ form }}
     <input type="submit" value="Submit"/>
 </form>
+{% endblock %}

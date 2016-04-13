@@ -1,14 +1,8 @@
-<h1>Parsons</h1>
-
-{% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }} <a href="{% url 'accounts:logout' %}">logout</a></p>
-    <p> You are in section {{ user.student.section }} </p>
-{% else %}
-    <a href="{% url 'accounts:login' %}">login</a>
-    <a href="{% url 'accounts:register_student' %}">register</a>
-{% endif %}
+{% extends 'app/base.html' %}
+{% block content %}
 <ul>
     {% for p in problems %}
     <li>{{ p.question }}</li>
     {% endfor %}
 </ul>
+{% endblock %}
