@@ -1,8 +1,24 @@
 {% extends 'app/base.html' %}
 {% block content %}
-<ul>
-    {% for p in problems %}
-    <li>{{ p.question }}</li>
-    {% endfor %}
-</ul>
+<div class="col-lg-12">
+    <h3>You have solved these problems:</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Solution</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in solved_problems %}
+                <tr>
+                    <td>{{ p.question }}</td>
+                    <td>{{ p.solution }}</td>
+                    <td>{{ p.points }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endblock %}

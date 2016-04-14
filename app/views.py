@@ -2,22 +2,24 @@ from django.shortcuts import render
 from django.views import generic
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
-from .models import Problem, Student
+from .models import Problem, Student, Solved
 
-class IndexView(generic.ListView):
-    template_name = 'app/index.html'
-    context_object_name = 'problems'
+@login_required
+def index(request):
+    context = {}
+    if request.user:
+        solved_problem_ids = ()
+        for s in Solved.objects.filter(user=request.user):
+            solved_problem_ids = solved_problem_ids + (s.problem_id,)
+        context['solved_problems'] = Problem.objects.filter(id__in=solved_problem_ids)
 
-    def get_queryset(self):
-        return Problem.objects.all()
+    return render(request, 'app/index.html', context)
 
+@login_required()
 def account(request):
     context = {}
-
-    if not request.user:
-        context['error'] = 'Please log in!'
-    else:
-        context['user'] = request.user
+    context['user'] = request.user
 
     return render(request, 'app/account.html', context)

@@ -27,5 +27,49 @@
             "is_active": "1",
             "date_joined": "2016-04-13 15:55:26.551224"
         }
+    },
+    {
+        "model": "app.student",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "section_id": 1
+        }
+    },
+    {
+        "model": "app.problem",
+        "pk": 1,
+        "fields": {
+            "question": "What is 1+1?",
+            "solution": "2",
+            "points": 2
+        }
+    },
+    {
+        "model": "app.problem",
+        "pk": 2,
+        "fields": {
+            "question": "What is the derivative of x^2?",
+            "solution": "2x",
+            "points": 4
+        }
+    },
+    {
+        "model": "app.solved",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "problem_id": 1,
+            "solved_time": "2016-04-13 16:25:26.551224"
+        }
+    },
+    {
+        "model": "app.solved",
+        "pk": 2,
+        "fields": {
+            "user_id": 1,
+            "problem_id": 2,
+            "solved_time": "2016-04-13 16:55:26.551224"
+        }
     }
 ]
