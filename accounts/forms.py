@@ -4,22 +4,18 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 
+from .validators import validate_udel_email, validate_email_taken
+
 class StudentRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required = True)
+    def __init__(self, *args, **kwargs):
+        super(StudentRegistrationForm, self).__init__(*args, **kwargs)
+        self.fields['email'].label = 'Email (udel.edu)'
+
+    email = forms.EmailField(required = True, validators=[validate_udel_email, validate_email_taken])
     username = forms.CharField(required = True)
     first_name = forms.CharField(required = True)
     last_name = forms.CharField(required = True)
     section = forms.ChoiceField(required = True, choices=Section.get_available_choices)
-
-    def cleaned_email(self):
-        email = self.cleaned_data['email']
-        domain = email.split('@')[1]
-        if domain != "udel.edu":
-            raise forms.ValidationError("Must use a udel.edu email.")
-        elif email and User.objects.filter(email=email).count():
-            raise forms.ValidationError("This email is already in use.")
-
-        return email
 
     class Meta:
         model = User
@@ -29,7 +25,7 @@ class StudentRegistrationForm(UserCreationForm):
         student = Student()
 
         form_username = self.cleaned_data['username']
-        form_email = self.cleaned_email()
+        form_email = self.cleaned_data['email']
         form_password = self.cleaned_data['password1']
         form_first_name = self.cleaned_data['first_name']
         form_last_name = self.cleaned_data['last_name']

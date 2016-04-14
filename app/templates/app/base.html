@@ -17,7 +17,7 @@
 
         {% if user.is_authenticated %}
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Logged in as {{ user.username }}</a></li>
+                <li><a href="{% url 'app:account' %}">{{ user.first_name }} {{ user.last_name }}</a></li>
                 <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
             </ul>
         {% else %}
