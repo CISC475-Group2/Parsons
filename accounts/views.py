@@ -16,4 +16,4 @@ def register_student(request):
     else:
         form = StudentRegistrationForm()
 
-    return render(request, 'accounts/register.html', {'form':form})
+    return render(request, 'accounts/register.html', {'form': form})
