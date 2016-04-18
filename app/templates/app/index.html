@@ -7,15 +7,13 @@
             <thead>
                 <tr>
                     <th>Question</th>
-                    <th>Solution</th>
                     <th>Points</th>
                 </tr>
             </thead>
             <tbody>
                 {% for p in assignment.problems.all %}
                     <tr>
-                        <td>{{ p.question }}</td>
-                        <td>{{ p.solution }}</td>
+                        <td><a href="{% url 'app:problem' p.id %}">{{ p.question }}</a></td>
                         <td>{{ p.points }}</td>
                     </tr>
                 {% endfor %}

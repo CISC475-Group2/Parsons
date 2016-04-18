@@ -21,3 +21,7 @@ def account(request):
     context['user'] = request.user
 
     return render(request, 'app/account.html', context)
+
+class ProblemView(generic.DetailView):
+    model = Problem
+    template_name = 'app/problem.html'
