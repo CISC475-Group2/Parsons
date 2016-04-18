@@ -55,6 +55,53 @@
         }
     },
     {
+        "model": "app.problem",
+        "pk": 3,
+        "fields": {
+            "question": "What is the output of print('hello world')",
+            "solution": "hello world",
+            "points": 3
+        }
+    },
+    {
+        "model": "app.problem",
+        "pk": 4,
+        "fields": {
+            "question": "What is YOLO stand for?",
+            "solution": "You only live once",
+            "points": 5
+        }
+    },
+    {
+        "model": "app.problem",
+        "pk": 5,
+        "fields": {
+            "question": "What is the meaning of life?",
+            "solution": "42",
+            "points": 5
+        }
+    },
+    {
+        "model": "app.assignment",
+        "pk": 1,
+        "fields": {
+            "title": "Lab 1",
+            "description": "Lab one, explore basic Racket",
+            "due_date": "2016-05-15 00:01:59.613858+00:00",
+            "problems": [1, 2]
+        }
+    },
+    {
+        "model": "app.assignment",
+        "pk": 2,
+        "fields": {
+            "title": "Lab 2",
+            "description": "Lab two, fool around.",
+            "due_date": "2016-05-25 00:01:59.613858+00:00",
+            "problems": [1, 3, 4, 5]
+        }
+    },
+    {
         "model": "app.solved",
         "pk": 1,
         "fields": {

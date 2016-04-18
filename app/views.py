@@ -4,16 +4,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-from .models import Problem, Student, Solved
+from .models import Assignment, Problem, Student, Solved
 
 @login_required
 def index(request):
     context = {}
+
     if request.user:
-        solved_problem_ids = ()
-        for s in Solved.objects.filter(user=request.user):
-            solved_problem_ids = solved_problem_ids + (s.problem_id,)
-        context['solved_problems'] = Problem.objects.filter(id__in=solved_problem_ids)
+        context['assignments'] = Assignment.objects.all();
 
     return render(request, 'app/index.html', context)
 

@@ -27,6 +27,15 @@ class Solved(models.Model):
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name + ' solved problem ' + str(self.problem.id)
 
+class Assignment(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField()
+    due_date = models.DateTimeField('due date', default=timezone.now() + datetime.timedelta(days=10))
+    problems = models.ManyToManyField(Problem)
+
+    def __str__(self):
+        return self.title
+
 class Section(models.Model):
     section = models.TextField()
 

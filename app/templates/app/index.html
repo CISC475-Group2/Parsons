@@ -1,24 +1,26 @@
 {% extends 'app/base.html' %}
 {% block content %}
 <div class="col-lg-12">
-    <h3>You have solved these problems:</h3>
-    <table class="table table-bordered table-hover">
-        <thead>
-            <tr>
-                <th>Question</th>
-                <th>Solution</th>
-                <th>Points</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for p in solved_problems %}
+    {% for assignment in assignments %}
+        <h2>{{ assignment.title }}</h2>
+        <table class="table table-bordered table-hover">
+            <thead>
                 <tr>
-                    <td>{{ p.question }}</td>
-                    <td>{{ p.solution }}</td>
-                    <td>{{ p.points }}</td>
+                    <th>Question</th>
+                    <th>Solution</th>
+                    <th>Points</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for p in assignment.problems.all %}
+                    <tr>
+                        <td>{{ p.question }}</td>
+                        <td>{{ p.solution }}</td>
+                        <td>{{ p.points }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endfor %}
 </div>
 {% endblock %}
