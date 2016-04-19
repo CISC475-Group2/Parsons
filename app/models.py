@@ -9,6 +9,12 @@ class Problem(models.Model):
     solution = models.TextField()
     points = models.IntegerField(default=1)
 
+    def solved(self, user):
+        if Solved.objects.get(user_id=user.id, problem_id=self.id):
+            return True
+        else:
+            return False
+
     def __str__(self):
         return self.question
 
