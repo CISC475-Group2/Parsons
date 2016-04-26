@@ -5,8 +5,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 class Problem(models.Model):
-    question = models.TextField()
-    solution = models.TextField()
+    question =models.TextField()
     points = models.IntegerField(default=1)
 
     def solved(self, user):
@@ -17,13 +16,6 @@ class Problem(models.Model):
 
     def __str__(self):
         return self.question
-
-class Block(models.Model):
-    problem = models.ForeignKey(Problem)
-    code = models.TextField()
-
-    def __str__(self):
-        return 'Code block for problem ' + str(self.problem.id)
 
 class Solved(models.Model):
     user = models.ForeignKey(User)
