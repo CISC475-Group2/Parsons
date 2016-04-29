@@ -69,7 +69,6 @@ def add_Dilimiter(parsed_input):
         return outputstring
 
 
-
 def convert_list(input_list,depth):
     output = []
     newDepth=depth+1
@@ -79,10 +78,9 @@ def convert_list(input_list,depth):
             returnValue = convert_list(input_list,newDepth)
             output.append (returnValue[0])
             newDepth = returnValue[1]
-            return [output, newDepth ]
+        return [output, newDepth ]
     else:
         return [output,newDepth]
-
 
 
 def read_parse_string_to_list(input_string):
