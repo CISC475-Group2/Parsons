@@ -8,4 +8,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^account/$', views.account, name='account'),
     url(r'^problem/(?P<pk>[0-9]+)/$', login_required(views.ProblemView.as_view()), name='problem'),
+    url(r'api/problem/(?P<pk>[0-9]+)/$', views.problem_detail),
 ]
