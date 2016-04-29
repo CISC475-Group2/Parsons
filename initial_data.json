@@ -40,8 +40,7 @@
         "model": "app.problem",
         "pk": 1,
         "fields": {
-            "question": "What is 1+1?",
-            "solution": "2",
+            "solution": "-(+(3, 2), 2)",
             "points": 2
         }
     },
@@ -49,8 +48,7 @@
         "model": "app.problem",
         "pk": 2,
         "fields": {
-            "question": "What is the derivative of x^2?",
-            "solution": "2x",
+            "solution": "What is the derivative of x^2?",
             "points": 4
         }
     },
@@ -58,8 +56,7 @@
         "model": "app.problem",
         "pk": 3,
         "fields": {
-            "question": "What is the output of print('hello world')",
-            "solution": "hello world",
+            "solution": "What is the output of print('hello world')",
             "points": 3
         }
     },
@@ -67,8 +64,7 @@
         "model": "app.problem",
         "pk": 4,
         "fields": {
-            "question": "What is YOLO stand for?",
-            "solution": "You only live once",
+            "solution": "What is YOLO stand for?",
             "points": 5
         }
     },
@@ -76,8 +72,7 @@
         "model": "app.problem",
         "pk": 5,
         "fields": {
-            "question": "What is the meaning of life?",
-            "solution": "42",
+            "solution": "What is the meaning of life?",
             "points": 5
         }
     },

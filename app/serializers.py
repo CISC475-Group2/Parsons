@@ -7,4 +7,4 @@ from racketparser import parser
 class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
-        fields = ('id', 'question', 'points')
+        fields = ('id', 'solution', 'points')
