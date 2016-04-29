@@ -4,6 +4,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
+from racketparser.parser import generate_parson_question
+
 class Problem(models.Model):
     solution = models.TextField()
     points = models.IntegerField(default=1)
@@ -13,6 +15,9 @@ class Problem(models.Model):
             return True
         else:
             return False
+
+    def get_question(self):
+        return generate_parson_question(self.solution)
 
     def __str__(self):
         return self.solution

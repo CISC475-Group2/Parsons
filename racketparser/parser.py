@@ -82,3 +82,9 @@ def read_parse_string_to_list(input_string):
 	del outList[-1]
 	return convert_list(outList,0)[0]
 
+
+def generate_parson_question(input_string):
+    """ Given input racket solution string, we want to generate data for a Parson's Problem.
+            Input: Racket string
+            Output: list for Parsons's Problem."""
+    return read_parse_string_to_list(parse(input_string))
