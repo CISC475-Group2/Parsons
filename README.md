@@ -1,5 +1,5 @@
 # Requirements
-* python version 3.5.1
+* python version 3.5.1 (important)
 * pip
 * virtualenv
 * mysql
@@ -31,9 +31,14 @@ python manage.py createsuperuser
 There is a test user with these credentials:
 * username: `johnsmith`
 * password: `password123`
-* 
-# Installation gotchas
 
-* Our VM uses `tcsh` shell, so be sure to switch to `bash` or you will get errors doing the `source` command. Just type `bash` and you will log into the bash shell.
+# Working on the project
+Make sure you have the `(venv)` sign in your terminal. If you don't, do `source venv/bin/activate` in terminal. Our VM uses `tcsh` shell, so be sure to switch to `bash` or you will get errors doing the `source` command. Just type `bash` and you will log into the bash shell.
 
-* Python 3.5.1 is required. Doesn't work with Python 3.4. Note that python 3.5 could be the `python3.5` command.
+# Testing
+
+Right now we have two tests
+
+`python manage.py test app`
+
+`python manage.py test racketparser`
