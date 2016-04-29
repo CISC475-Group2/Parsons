@@ -8,6 +8,7 @@ class ParserTest(unittest.TestCase):
 
         assert [['(', '<nt>', ')'], [['(', '<nt>', '<nt>', '<nt>', ')'],
                                      [['-']], [['2']], [['(', '<nt>', '<nt>', ')'], [['3']], [['2']]]]] == parser.read_parse_string_to_list(parser.parse("(- 2 (3 2))"))
+
     def exception_test(self):
         """runs tests expecting exceptions from input known to generate said exceptions."""
         #empty input test
