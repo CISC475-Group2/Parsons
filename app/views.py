@@ -7,10 +7,9 @@ from django.contrib.auth.decorators import login_required
 from .models import Assignment, Problem, Student, Solved
 
 # Django Rest Framework
-from django.views.decorators.csrf import csrf_exempt
-from django.http import HttpResponse
-from rest_framework.renderers import JSONRenderer
-from rest_framework.parsers import JSONParser
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 from .serializers import ProblemSerializer
 
 @login_required
@@ -33,19 +32,13 @@ class ProblemView(generic.DetailView):
     model = Problem
     template_name = 'app/problem.html'
 
-class JSONResponse(HttpResponse):
-    def __init__(self, data, **kwargs):
-        content = JSONRenderer().render(data)
-        kwargs['content_type'] = 'application/json'
-        super(JSONResponse, self).__init__(content, **kwargs)
-
-@csrf_exempt
+@api_view(['GET'])
 def problem_detail(request, pk):
     try:
         problem = Problem.objects.get(pk=pk)
     except Problem.DoesNotExist:
-        return HttpResponse(status=404)
+        return Response(status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = ProblemSerializer(problem)
-        return JSONResponse(serializer.data)
+        return Response(serializer.data)
