@@ -10,7 +10,7 @@ class ParserTest(TestCase):
 
         self.assertEqual(
                 [['(', '<nt>', '<nt>', '<nt>', ')'],
-                    ['-'], ['2'], [['(', '<nt>', '<nt>', ')'], ['3'], ['2']]],
+                    ['-'], ['2'], ['(', '<nt>', '<nt>', ')'], ['3'], ['2']],
                 read_parse_string_to_list(parse("(- 2 (3 2))")))
 
     def test_parser_raises_exceptions(self):
