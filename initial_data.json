@@ -48,7 +48,7 @@
         "model": "app.problem",
         "pk": 2,
         "fields": {
-            "solution": "What is the derivative of x^2?",
+            "solution": "(+ 3 (- 2 5))",
             "points": 4
         }
     },
@@ -56,7 +56,7 @@
         "model": "app.problem",
         "pk": 3,
         "fields": {
-            "solution": "What is the output of print('hello world')",
+            "solution": "(* 7 (+ 5 3))",
             "points": 3
         }
     },

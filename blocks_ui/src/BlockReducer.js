@@ -1,9 +1,7 @@
 import IdTracker from './IdTracker'
 import { ntRegex, ntClosingRegex } from './Constants'
 
-const initialData = {
-    "blocks" : [["(", "<nt>", "<nt>", "<nt>", ")"], ["-"], ["2"], ["(", "<nt>", "<nt>", ")"], ["3"], ["2"]]
-}
+const initialData = window.__INITIAL_DATA__
 
 export default function blockApp(state=makeInitialState(initialData), action) {
     let newBlocks
@@ -35,6 +33,9 @@ export default function blockApp(state=makeInitialState(initialData), action) {
 
 export function makeInitialState(data) {
     let state = {
+        problemNumber: data.problem_number,
+        solution: data.solution,
+        compiles_to: data.compiles_to,
         baseBlockString: '',
         blocks: []
     }

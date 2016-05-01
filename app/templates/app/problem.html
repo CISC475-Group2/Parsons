@@ -3,14 +3,12 @@
 
 {% block content %}
 <div class="col-lg-12">
-    <h2>Problem</h2>
-    <h2><small>{{ problem.solution }}</small></h2>
     <div id="root"></div>
 </div>
 {% endblock %}
 
 {% block js %}
-window.__INITIAL_STATE__ = "{{problem.solution}}"
+window.__INITIAL_DATA__ = {{problem.generate_initial_data | safe}}
 {% endblock %}
 {% block scripts %}
 <script src="{% static 'app/js/bundle.min.js' %}"></script>

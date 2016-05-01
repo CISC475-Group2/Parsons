@@ -1,4 +1,4 @@
-import datetime
+import datetime, json
 
 from django.db import models
 from django.utils import timezone
@@ -7,7 +7,8 @@ from django.contrib.auth.models import User
 from racketparser.parser import generate_parson_question
 
 class Problem(models.Model):
-    solution = models.TextField()
+    solution = models.TextField(default='')
+    compiles_to = models.TextField(default='')
     points = models.IntegerField(default=1)
 
     def solved(self, user):
@@ -16,8 +17,14 @@ class Problem(models.Model):
         else:
             return False
 
-    def get_question(self):
-        return generate_parson_question(self.solution)
+    def generate_initial_data(self):
+        initial_data = {}
+        initial_data['problem_number'] = self.pk
+        initial_data['solution'] = self.solution
+        initial_data['compiles_to'] = self.compiles_to
+        initial_data['blocks'] = generate_parson_question(self.solution)
+
+        return initial_data
 
     def __str__(self):
         return self.solution

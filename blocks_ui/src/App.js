@@ -7,7 +7,9 @@ class App extends Component {
         const { blocks, actions } = this.props
         return (
             <div>
-                <Problem baseBlockString={this.props.baseBlockString}
+                <Problem problemNumber={this.props.problemNumber}
+                         compilesTo={this.props.compilesTo}
+                         baseBlockString={this.props.baseBlockString}
                          baseBlock={this.props.baseBlock}
                          blocks={this.props.blocks}
                          onSwapBlocks={this.props.onSwapBlocks}
@@ -20,6 +22,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
+        problemNumber: state.problemNumber,
+        compilesTo: state.compilesTo,
         baseBlockString: state.baseBlockString,
         baseBlock: state.blocks[0],
         blocks: state.blocks.slice(1, state.blocks.length)

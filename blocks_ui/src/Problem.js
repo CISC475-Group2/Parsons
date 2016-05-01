@@ -10,8 +10,10 @@ class Problem extends Component {
         return (
             <div className="problem">
                 <div className="page-header">
-                      <h1>Problem 4</h1>
+                      <h1>Problem {this.props.problemNumber}</h1>
                 </div>
+                <p>This should compile to</p>
+                <pre className="code-space">{this.props.compilesTo}</pre>
                 <pre className="code-space">{this.props.baseBlockString}</pre>
                 <pre>
                 <Block block={this.props.baseBlock}
