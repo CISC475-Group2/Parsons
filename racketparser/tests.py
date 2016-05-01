@@ -5,12 +5,12 @@ class ParserTest(TestCase):
     def test_parser_passes(self):
         """runs passing test (known ouputs against known inputs expecting those outputs)."""
         self.assertEqual(
-                "( <nt> <nt> )|( <nt> <nt> )|test|( <nt> <nt> <nt> )|1|2|( <nt> <nt> )|3|4|( <nt> <nt> <nt> )|+|2|3|",
-                parse("( test(1 2 (3 4))) \n (+ 2 3)"))
+                "( <nt> <nt> )|test|( <nt> <nt> <nt> )|1|2|( <nt> <nt> )|3|4|",
+                parse("( test(1 2 (3 4))) "))
 
         self.assertEqual(
-                [['(', '<nt>', ')'], [['(', '<nt>', '<nt>', '<nt>', ')'],
-                    [['-']], [['2']], [['(', '<nt>', '<nt>', ')'], [['3']], [['2']]]]],
+                [['(', '<nt>', '<nt>', '<nt>', ')'],
+                    ['-'], ['2'], [['(', '<nt>', '<nt>', ')'], ['3'], ['2']]],
                 read_parse_string_to_list(parse("(- 2 (3 2))")))
 
     def test_parser_raises_exceptions(self):

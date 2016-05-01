@@ -62,7 +62,26 @@ def add_Dilimiter(parsed_input):
             outputstring= outputstring + "<nt> "
         outputstring = outputstring + ")|"
         for item in parsed_input:
-            outputstring = outputstring + add_Dilimiter(item)
+            outputstring =  add_Dilimiter_recurse(item)
+        return outputstring
+    else:
+        outputstring = parsed_input+"|"
+        return outputstring
+
+def add_Dilimiter_recurse(parsed_input):
+    """Adds delimiters to the parsed input for readability into blocks
+
+    Input: parsed program
+    Output: list contaning placeholders for locations of block insertion
+    """
+    outputstring=""
+    if type(parsed_input) == type([]):
+        outputstring = outputstring + "( "
+        for item in range(len(parsed_input)):
+            outputstring= outputstring + "<nt> "
+        outputstring = outputstring + ")|"
+        for item in parsed_input:
+            outputstring = outputstring + add_Dilimiter_recurse(item)
         return outputstring
     else:
         outputstring = parsed_input+"|"
@@ -80,7 +99,7 @@ def convert_list(input_list,depth):
             newDepth = returnValue[1]
         return [output, newDepth ]
     else:
-        return [output,newDepth]
+        return [output[0],newDepth]
 
 
 def read_parse_string_to_list(input_string):
