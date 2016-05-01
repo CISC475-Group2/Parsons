@@ -35,7 +35,7 @@ export function makeInitialState(data) {
     let state = {
         problemNumber: data.problem_number,
         solution: data.solution,
-        compiles_to: data.compiles_to,
+        compilesTo: data.compiles_to,
         baseBlockString: '',
         blocks: []
     }

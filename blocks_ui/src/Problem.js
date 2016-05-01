@@ -12,8 +12,7 @@ class Problem extends Component {
                 <div className="page-header">
                       <h1>Problem {this.props.problemNumber}</h1>
                 </div>
-                <p>This should compile to</p>
-                <pre className="code-space">{this.props.compilesTo}</pre>
+                <p>This should compile to <code>{this.props.compilesTo}</code></p>
                 <pre className="code-space">{this.props.baseBlockString}</pre>
                 <pre>
                 <Block block={this.props.baseBlock}

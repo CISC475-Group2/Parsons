@@ -35,8 +35,6 @@ body {
 
 /* Blocks UI CSS
 -------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
-
 .problem {
     max-width: 680px;
 }
