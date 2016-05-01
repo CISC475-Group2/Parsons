@@ -8,7 +8,7 @@ import AvailableBlocksSpace from './AvailableBlocksSpace'
 class Problem extends Component {
     render() {
         return (
-            <div className="problem col-lg-12">
+            <div className="problem">
                 <div className="page-header">
                       <h1>Problem 4</h1>
                 </div>

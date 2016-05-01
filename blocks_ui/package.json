@@ -4,6 +4,7 @@
   "description": "Boilerplate for ReactJS project with hot code reloading",
   "scripts": {
     "start": "node server.js",
+    "build": "webpack --progress --colors && cp dist/bundle.min.js ../app/static/app/js/bundle.min.js",
     "lint": "eslint src"
   },
   "repository": {
@@ -21,12 +22,12 @@
     "edit",
     "webpack"
   ],
-  "author": "Dan Abramov <dan.abramov@me.com> (http://github.com/gaearon)",
+  "author": "Keith Yong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "homepage": "",
   "devDependencies": {
     "babel-core": "^6.0.20",
     "babel-eslint": "^4.1.3",
@@ -36,9 +37,7 @@
     "babel-preset-stage-0": "^6.0.15",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.6.2",
-    "react-hot-loader": "^1.3.0",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "webpack": "^1.12.2"
   },
   "dependencies": {
     "react": "^0.14.6",

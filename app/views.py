@@ -28,9 +28,12 @@ def account(request):
 
     return render(request, 'app/account.html', context)
 
-class ProblemView(generic.DetailView):
-    model = Problem
-    template_name = 'app/problem.html'
+@login_required()
+def problem(request, pk):
+    context = {}
+    context['problem'] = Problem.objects.get(pk=pk)
+
+    return render(request, 'app/problem.html', context)
 
 @api_view(['GET'])
 def problem_detail(request, pk):

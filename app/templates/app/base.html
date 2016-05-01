@@ -5,6 +5,8 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+        {% block head %}
+        {% endblock %}
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -40,5 +42,11 @@
                 <p class="text-muted">© University of Delaware 2016 • CISC475 Group 2 Project • <a href="http://cisc475-group2.github.io/parsons/">About</a> • <a href="https://cisc475.gitbooks.io/parsons/content/">Documentation</a> • <a href="https://github.com/CISC475-Group2/parsons">GitHub</a></p>
             </div>
         </footer>
+        <script>
+            {% block js %}
+            {% endblock %}
+        </script>
+        {% block scripts %}
+        {% endblock %}
     </body>
 </html>

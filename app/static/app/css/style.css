@@ -32,3 +32,68 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+
+/* Blocks UI CSS
+-------------------------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
+.problem {
+    max-width: 680px;
+}
+
+.block, .code-space {
+    font-family: 'Source Code Pro';
+    font-size: 2rem;
+    color: #2C3E50;
+}
+
+.block {
+    background-color: #EDEFEF;
+    text-align: center;
+    border: 1px solid #BBB;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px 15px 5px 15px;
+    margin: 0px 5px;
+
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.draggable {
+    cursor: pointer;
+}
+
+.draggable:hover {
+    background-color: #E9EBEB;
+}
+
+.block * {
+    vertical-align: middle;
+}
+
+.has-non-terminals {
+    padding-right: 7px;
+    padding-left: 7px;
+}
+
+.non-terminal {
+    display: inline-block;
+    background: white;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    margin: 0px 5px 0px 5px;
+}
+
+.available-blocks-space {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #DDD;
+    min-height: 53px;
+}
