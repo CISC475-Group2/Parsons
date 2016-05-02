@@ -38,10 +38,10 @@ class RegisterStudentTest(TestCase):
         Test that a standard registration works.
         """
         setup()
-        response = self.client.post(reverse('accounts:register_student'), test_user_1)
+        response = self.client.post(reverse('accounts:register_student'), self.test_user_1)
         self.assertRedirects(response, reverse('app:index'))
-        user = authenticate(username=test_user_1['username'], password=test_user_1['password1'])
-        self.assertEqual(user.username, test_user_1['username'])
+        user = authenticate(username=self.test_user_1['username'], password=self.test_user_1['password1'])
+        self.assertEqual(user.username, self.test_user_1['username'])
 
     def test_non_udel_email(self):
         """
@@ -49,7 +49,7 @@ class RegisterStudentTest(TestCase):
         'Must ues a udel.edu email.'
         """
         setup()
-        gmail_user = copy.deepcopy(test_user_1)
+        gmail_user = copy.deepcopy(self.test_user_1)
         gmail_user['email'] = 'hford@gmail.com'
         response = self.client.post(reverse('accounts:register_student'), gmail_user)
         self.assertFormError(response, 'form', 'email', ['Must use a udel.edu email.'])
@@ -60,11 +60,11 @@ class RegisterStudentTest(TestCase):
         raise an error message.
         """
         setup()
-        same_email = copy.deepcopy(test_user_2)
-        same_email['email'] = test_user_1['email']
+        same_email = copy.deepcopy(self.test_user_2)
+        same_email['email'] = self.test_user_1['email']
 
         # Register first user
-        self.client.post(reverse('accounts:register_student'), test_user_1)
+        self.client.post(reverse('accounts:register_student'), self.test_user_1)
 
         # Register second user
         response = self.client.post(reverse('accounts:register_student'), same_email)
