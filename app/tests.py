@@ -7,30 +7,31 @@ from django.contrib.auth import authenticate
 
 test_section = Section(section="15F-CISC108021L: INTRO TO COMPUTER SCIENCE I, 15F-CISC108010: INTRO TO COMPUTER SCIENCE I")
 
-test_user_1 = {
-    'first_name': 'Henry',
-    'last_name': 'Ford',
-    'username': 'hford',
-    'email': 'hford@udel.edu',
-    'section': test_section.section,
-    'password1': 'password123',
-    'password2': 'password123',
-}
-
-test_user_2 = {
-    'first_name': 'Wesley',
-    'last_name': 'Weasle',
-    'username': 'wweasle',
-    'email': 'wweasle@udel.edu',
-    'section': test_section.section,
-    'password1': 'password123',
-    'password2': 'password123',
-}
-
 def setup():
     test_section.save()
 
 class RegisterStudentTest(TestCase):
+
+    test_user_1 = {
+        'first_name': 'Henry',
+        'last_name': 'Ford',
+        'username': 'hford',
+        'email': 'hford@udel.edu',
+        'section': test_section.section,
+        'password1': 'password123',
+        'password2': 'password123',
+    }
+
+    test_user_2 = {
+        'first_name': 'Wesley',
+        'last_name': 'Weasle',
+        'username': 'wweasle',
+        'email': 'wweasle@udel.edu',
+        'section': test_section.section,
+        'password1': 'password123',
+        'password2': 'password123',
+    }
+
 
     def test_standard_registration(self):
         """
