@@ -95,11 +95,12 @@ def convert_list(input_list,depth):
     if  input_list[depth].count("<nt>") != 0:
         for i in range (0,input_list[depth].count("<nt>")):
             returnValue = convert_list(input_list,newDepth)
-            output.append (returnValue[0])
+            for item in returnValue[0]:
+                output.append (item)
             newDepth = returnValue[1]
         return [output, newDepth ]
     else:
-        return [output[0],newDepth]
+        return [output,newDepth]
 
 
 def read_parse_string_to_list(input_string):
