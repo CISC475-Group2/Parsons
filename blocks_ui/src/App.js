@@ -16,7 +16,8 @@ class App extends Component {
                          onMoveBlock={this.props.onMoveBlock}
                          onReset={this.props.onReset}
                          onSubmit={this.props.onSubmit} 
-                         isSuccess={this.props.isSuccess} />
+                         isSuccess={this.props.isSuccess}
+                         lastAttempt={this.props.lastAttempt} />
             </div>
         )
     }
@@ -29,6 +30,7 @@ function mapStateToProps(state) {
         baseBlockString: state.baseBlockString,
         baseBlock: state.blocks[0],
         isSuccess: state.lastAttempt.isSuccess,
+        lastAttempt: state.lastAttempt.solution,
         blocks: state.blocks.slice(1, state.blocks.length)
     }
 }

@@ -16,7 +16,7 @@ class Problem extends Component {
                        </div>
             case false:
                 return <div className="alert alert-danger" role="alert">
-                           <strong>Wrong answer.</strong> Change a few things up and try submitting again.
+                           <strong><code>{this.props.lastAttempt}</code> is the wrong answer.</strong> Change a few things up and try submitting again.
                        </div>
         }
     }
