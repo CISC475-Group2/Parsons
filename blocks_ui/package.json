@@ -1,15 +1,11 @@
 {
-  "name": "react-hot-boilerplate",
+  "name": "blocks_ui",
   "version": "1.0.0",
-  "description": "Boilerplate for ReactJS project with hot code reloading",
+  "description": "Blocks UI for the Parsons Problems project.",
   "scripts": {
-    "start": "node server.js",
     "build": "webpack --progress --colors && cp dist/bundle.min.js ../app/static/app/js/bundle.min.js",
+    "watch": "webpack-dev-server",
     "lint": "eslint src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gaearon/react-hot-boilerplate.git"
   },
   "keywords": [
     "react",

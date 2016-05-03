@@ -11,5 +11,7 @@
 window.__INITIAL_DATA__ = {{problem.generate_initial_data | safe}}
 {% endblock %}
 {% block scripts %}
+{% comment %} webpack-dev-server script for development. {% endcomment %}
+{% comment %}<script src="http://localhost:8080/bundle.min.js"></script>{% endcomment %}
 <script src="{% static 'app/js/bundle.min.js' %}"></script>
 {% endblock %}

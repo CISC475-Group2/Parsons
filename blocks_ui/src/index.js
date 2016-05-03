@@ -15,6 +15,7 @@ function renderApp() {
         document.getElementById('root')
     )
 }
+
 renderApp()
 store.subscribe(renderApp)
 

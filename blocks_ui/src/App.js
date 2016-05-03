@@ -14,7 +14,9 @@ class App extends Component {
                          blocks={this.props.blocks}
                          onSwapBlocks={this.props.onSwapBlocks}
                          onMoveBlock={this.props.onMoveBlock}
-                         onReset={this.props.onReset} />
+                         onReset={this.props.onReset}
+                         onSubmit={this.props.onSubmit} 
+                         isSuccess={this.props.isSuccess} />
             </div>
         )
     }
@@ -26,6 +28,7 @@ function mapStateToProps(state) {
         compilesTo: state.compilesTo,
         baseBlockString: state.baseBlockString,
         baseBlock: state.blocks[0],
+        isSuccess: state.lastAttempt.isSuccess,
         blocks: state.blocks.slice(1, state.blocks.length)
     }
 }
@@ -40,6 +43,9 @@ function mapDispatchToProps(dispatch) {
         },
         onReset: () => {
             dispatch({ type: 'RESET' })
+        },
+        onSubmit: () => {
+            dispatch({ type: 'SUBMIT' })
         }
     }
 }

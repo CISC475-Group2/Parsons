@@ -6,6 +6,20 @@ import BlockList from './BlockList';
 import AvailableBlocksSpace from './AvailableBlocksSpace'
 
 class Problem extends Component {
+    getSubmitAlert() {
+        switch (this.props.isSuccess) {
+            case null:
+                break;
+            case true:
+                return <div className="alert alert-success" role="alert">
+                           <strong>Well done!</strong> That is the correct answer.
+                       </div>
+            case false:
+                return <div className="alert alert-danger" role="alert">
+                           <strong>Wrong answer.</strong> Change a few things up and try submitting again.
+                       </div>
+        }
+    }
     render() {
         return (
             <div className="problem">
@@ -13,6 +27,7 @@ class Problem extends Component {
                       <h1>Problem {this.props.problemNumber}</h1>
                 </div>
                 <p>This should compile to <code>{this.props.compilesTo}</code></p>
+                {this.getSubmitAlert.bind(this)()}
                 <pre className="code-space">{this.props.baseBlockString}</pre>
                 <pre>
                 <Block block={this.props.baseBlock}
@@ -26,7 +41,7 @@ class Problem extends Component {
                 </pre>
                 <div className="btn-group" role="group" aria-label="...">
                     <button type="button" className="btn btn-default" onClick={this.props.onReset.bind(this)}>Reset</button>
-                    <button type="button" className="btn btn-default" >Submit</button>
+                    <button type="button" className="btn btn-default" onClick={this.props.onSubmit.bind(this)}>Submit</button>
                 </div>
             </div>
         );

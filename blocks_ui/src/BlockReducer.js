@@ -23,7 +23,23 @@ export default function blockApp(state=makeInitialState(initialData), action) {
                 blocks: newBlocks
             }
         case 'SUBMIT':
-            return state
+            if (state.baseBlockString === state.solution) {
+                return {
+                    ...state,
+                    lastAttempt: {
+                        solution: state.baseBlockString,
+                        isSuccess: true
+                    }
+                }
+            } else {
+                return {
+                    ...state,
+                    lastAttempt: {
+                        solution: state.baseBlockString,
+                        isSuccess: false
+                    }
+                }
+            }
         case 'RESET':
             return makeInitialState(initialData)
         default:
@@ -35,6 +51,10 @@ export function makeInitialState(data) {
     let state = {
         problemNumber: data.problem_number,
         solution: data.solution,
+        lastAttempt: {
+            solution: '',
+            isSuccess: null
+        },
         compilesTo: data.compiles_to,
         baseBlockString: '',
         blocks: []
@@ -192,4 +212,3 @@ function swapBlocks(blocks, sourceId, targetId) {
 
     return newBlocks
 }
-
