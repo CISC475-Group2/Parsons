@@ -9,9 +9,9 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.min.js'
   },
-  // plugins: [
-  //   new webpack.optimize.UglifyJsPlugin({minimize:true}),
-  // ],
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize:true}),
+  ],
   module: {
     loaders: [{
       test: /\.js$/,

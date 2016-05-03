@@ -61,7 +61,7 @@ export function makeInitialState(data) {
     }
     let idTracker = new IdTracker()
     state.blocks.push(createTerminalBlock(idTracker, -1, false, data.blocks[0]))
-    state.blocks = state.blocks.concat(data.blocks.slice(1, data.blocks.length).map(block => {
+    state.blocks = state.blocks.concat(shuffleArray(data.blocks.slice(1, data.blocks.length)).map(block => {
         return createTerminalBlock(idTracker, -1, true, block)
     }))
 
@@ -211,4 +211,14 @@ function swapBlocks(blocks, sourceId, targetId) {
     let targetContainer = getParentChildren(newBlocks, targetId)
 
     return newBlocks
+}
+
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
 }
