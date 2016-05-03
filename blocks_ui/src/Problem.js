@@ -26,7 +26,7 @@ class Problem extends Component {
                 <div className="page-header">
                       <h1>Problem {this.props.problemNumber}</h1>
                 </div>
-                <p>This should compile to <code>{this.props.compilesTo}</code></p>
+                <p>This should evaluate to <code>{this.props.evaluatesTo}</code></p>
                 {this.getSubmitAlert.bind(this)()}
                 <pre className="code-space">{this.props.baseBlockString}</pre>
                 <pre>

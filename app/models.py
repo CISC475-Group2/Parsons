@@ -8,7 +8,7 @@ from racketparser.parser import generate_parson_question
 
 class Problem(models.Model):
     solution = models.TextField(default='')
-    compiles_to = models.TextField(default='')
+    evaluates_to = models.TextField(default='')
     points = models.IntegerField(default=1)
 
     def solved(self, user):
@@ -21,7 +21,7 @@ class Problem(models.Model):
         initial_data = {}
         initial_data['problem_number'] = self.pk
         initial_data['solution'] = self.solution
-        initial_data['compiles_to'] = self.compiles_to
+        initial_data['evaluates_to'] = self.evaluates_to
         initial_data['blocks'] = generate_parson_question(self.solution)
 
         return initial_data

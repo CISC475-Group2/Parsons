@@ -8,7 +8,7 @@ class App extends Component {
         return (
             <div>
                 <Problem problemNumber={this.props.problemNumber}
-                         compilesTo={this.props.compilesTo}
+                         evaluatesTo={this.props.evaluatesTo}
                          baseBlockString={this.props.baseBlockString}
                          baseBlock={this.props.baseBlock}
                          blocks={this.props.blocks}
@@ -25,7 +25,7 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
         problemNumber: state.problemNumber,
-        compilesTo: state.compilesTo,
+        evaluatesTo: state.evaluatesTo,
         baseBlockString: state.baseBlockString,
         baseBlock: state.blocks[0],
         isSuccess: state.lastAttempt.isSuccess,

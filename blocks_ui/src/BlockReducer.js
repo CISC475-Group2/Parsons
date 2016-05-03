@@ -55,7 +55,7 @@ export function makeInitialState(data) {
             solution: '',
             isSuccess: null
         },
-        compilesTo: data.compiles_to,
+        evaluatesTo: data.evaluates_to,
         baseBlockString: '',
         blocks: []
     }
