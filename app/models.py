@@ -12,9 +12,10 @@ class Problem(models.Model):
     points = models.IntegerField(default=1)
 
     def solved(self, user):
-        if Solved.objects.get(user_id=user.id, problem_id=self.id):
-            return True
-        else:
+        try:
+            if Solved.objects.get(user_id=user.id, problem_id=self.id):
+                return True
+        except Solved.DoesNotExist:
             return False
 
     def generate_initial_data(self):
