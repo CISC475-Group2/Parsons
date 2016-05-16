@@ -5,4 +5,6 @@ from django.contrib.auth import authenticate
 
 class ProblemSubmissionForm(forms.Form):
     submission = forms.CharField()
-    
+
+class UploadRosterForm(forms.Form):
+    file = forms.FileField()

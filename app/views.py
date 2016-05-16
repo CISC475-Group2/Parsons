@@ -3,15 +3,20 @@ from django.views import generic
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.admin.views.decorators import staff_member_required
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from django.http import HttpResponseRedirect
 from .models import Assignment, Problem, Student, Solved
+from django.core.urlresolvers import reverse
+from .rosterParser import parse
 
 # Django Rest Framework
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializers import ProblemSerializer
-
+from app.forms import UploadRosterForm
 @login_required
 def index(request):
     context = {}
@@ -45,3 +50,15 @@ def problem_detail(request, pk):
     if request.method == 'GET':
         serializer = ProblemSerializer(problem)
         return Response(serializer.data)
+
+@staff_member_required
+def upload_file(request):
+    if request.method == 'POST':
+        context = {}
+        form = UploadRosterForm(request.POST, request.FILES)
+        if form.is_valid():
+            parse(file=request.FILES['file'])
+            return HttpResponseRedirect('/')
+    else:
+        form = UploadRosterForm()
+    return render_to_response('app/classUpload.html', {'form': form},context_instance=RequestContext(request))
