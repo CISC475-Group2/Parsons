@@ -10,6 +10,7 @@ from django.http import HttpResponseRedirect
 from .models import Assignment, Problem, Student, Solved
 from django.core.urlresolvers import reverse
 from .rosterParser import parse
+from racketcompiler.racketcompiler import compile_and_run
 
 # Django Rest Framework
 from rest_framework import status
@@ -50,6 +51,10 @@ def problem_detail(request, pk):
     if request.method == 'GET':
         serializer = ProblemSerializer(problem)
         return Response(serializer.data)
+
+@api_view(['GET'])
+def compile_racket(request):
+    return Response(compile_and_run("(+ 2 (- 3 3))", "3", "5"))
 
 @staff_member_required
 def upload_file(request):
