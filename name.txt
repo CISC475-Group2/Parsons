@@ -1,0 +1,14 @@
+multiple choice
+software engineering vs development
+sdlc
+project triple constraint
+software methodologies - waterfall, prototyping
+agile
+high lvl understanding of what agile dev means
+popular agile methodologies - scrum, people involved, kanban, feature driven development
+design patterns
+test driven development
+verification vs validation
+white vs gray vs black box testing
+systems testing lifecycle
+alpha beta testing

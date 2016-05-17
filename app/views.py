@@ -54,7 +54,8 @@ def problem_detail(request, pk):
 
 @api_view(['GET'])
 def compile_racket(request):
-    return Response(compile_and_run("(+ 2 (- 3 3))", "3", "5"))
+    racket_output = compile_and_run("s", "(define ( car-distance t) (* (/ 44 2.8) (* t t))) )","(check-within 500 500 0.001)").decode("utf-8")
+    return Response(racket_output)
 
 @staff_member_required
 def upload_file(request):
