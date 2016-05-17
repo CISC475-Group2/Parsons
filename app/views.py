@@ -54,7 +54,7 @@ def problem_detail(request, pk):
 
 @api_view(['GET'])
 def compile_racket(request):
-    racket_output = compile_and_run("s", "(define ( car-distance t) (* (/ 44 2.8) (* t t))) )","(check-within 500 500 0.001)").decode("utf-8")
+    racket_output = compile_and_run("s", "(define ( car-distance t) (* (/ 44 2.8) (* t t)))","(check-within 500 500 0.001)").decode("utf-8")
     return Response(racket_output)
 
 @staff_member_required
