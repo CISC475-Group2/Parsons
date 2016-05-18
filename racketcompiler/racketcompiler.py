@@ -17,6 +17,8 @@ def generateTestFile(problem, userGeneratedResult):
     preface = '#! /usr/bin/env racket \n#lang racket/base \n(require test-engine/racket-tests)\n'
     suffix = '\n(test)'
     expectedTest = problem.test_code
+    if(expectedTest== ""):
+        expectedTest= "(check-within "+ userGeneratedResult+" " + str(problem.evaluates_to)+ " 0.001)"
     #randgen for file name
     if os.path.isfile("test.rkt"):
         #file is in use sleep?
