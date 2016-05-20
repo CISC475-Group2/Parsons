@@ -25,7 +25,9 @@ def generateTestFile(problem, userGeneratedResult):
         removeTestFile()
     file = open("test.rkt", "w")
     file.write(preface)
-    file.write(userGeneratedResult)
+    if (expectedTest == ""):
+        expectedTest = "(check-within " + userGeneratedResult + " " + str(problem.evaluates_to) + " 0.001)"
+        file.write(userGeneratedResult)
     file.write(expectedTest)
     file.write(suffix)
     file.close()

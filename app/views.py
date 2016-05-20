@@ -55,7 +55,12 @@ def problem_detail(request, pk):
 @api_view(['GET'])
 def compile_racket(request):
     code = request.query_params['code']
-    racket_output = compile_and_run('s', code, '(check-within 500 500 0.001)').decode('utf-8')
+    pk = request.query_params['pk']
+    problem = Problem.objects.get(pk = pk)
+    try:
+        racket_output = compile_and_run(problem, code)[1].decode('utf-8')
+    except:
+        racket_output = compile_and_run(problem, code)[1]
     return Response(racket_output)
 
 @staff_member_required
