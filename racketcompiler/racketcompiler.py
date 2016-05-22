@@ -6,7 +6,7 @@ def compile_and_run(problem, userGeneratedResult):
     generateTestFile(problem, userGeneratedResult)
     try:
         output = subprocess.check_output(["raco", "test" , "test.rkt" ])
-        removeTestFile()
+        #removeTestFile()
         if(str(output).find("passed")):
             return ["passed",output]
         return ["failed",output]

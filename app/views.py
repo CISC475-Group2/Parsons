@@ -58,6 +58,7 @@ def compile_racket(request):
     pk = request.query_params['pk']
     problem = Problem.objects.get(pk = pk)
     try:
+        code = code.replace("-*", "+")
         racket_output = compile_and_run(problem, code)[1].decode('utf-8')
     except:
         racket_output = compile_and_run(problem, code)[1]

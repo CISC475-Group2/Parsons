@@ -8,8 +8,8 @@ from racketparser.parser import generate_parson_question
 
 class Problem(models.Model):
     solution = models.TextField(default='')
-    evaluates_to = models.TextField(default='')
-    test_code = models.TextField(default='')
+    evaluates_to = models.TextField(default='',null=True, blank=True)
+    test_code = models.TextField(default='', null=True, blank=True)
     points = models.IntegerField(default=1)
 
     def solved(self, user):

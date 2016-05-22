@@ -23,7 +23,15 @@ export default function blockApp(state=makeInitialState(initialData), action) {
                 blocks: newBlocks
             }
         case 'SUBMIT':
-            if (state.baseBlockString === state.solution) {
+         var xmlHttp = new XMLHttpRequest({mozSystem: true});
+        var code = state.baseBlockString.replace("+", "-*")
+        console.log("http://127.0.0.1:8000/compile-racket/?pk="+state.problemNumber+"&code="+state.code)
+         xmlHttp.open( "GET", "http://127.0.0.1:8000/compile-racket/?pk="+state.problemNumber+"&code="+code, false ); // false for synchronous request
+         xmlHttp.send( null );
+         var result= xmlHttp.responseText
+        console.log(result)
+
+	    if (result.contains("test passed") || result.contains("tests passed")) {
                 return {
                     ...state,
                     lastAttempt: {
